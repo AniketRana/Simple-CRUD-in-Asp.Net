@@ -19,7 +19,7 @@
 
     <asp:Panel ID="pnlForm" Visible="false" runat="server">
         <center>
-            <table height="400px"> 
+            <table height="400px">  
                 <tr>
                     <td>
                         ID 
