@@ -15,7 +15,7 @@
     $(document).ready(function () {
         $('#grvData').dataTable();
     });
-</script>
+</script> 
 
     <asp:Panel ID="pnlForm" Visible="false" runat="server">
         <center>
