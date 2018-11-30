@@ -149,6 +149,7 @@ public partial class test : System.Web.UI.Page
         txtMob.Text = dt.Rows[0]["MobileNo"].ToString();
         txtEducation.Text = dt.Rows[0]["Education"].ToString();
         lblFName.Text = dt.Rows[0]["Photo"].ToString();
+        Image1.ImageUrl ="img/"+ dt.Rows[0]["Photo"].ToString();
         if (dt.Rows[0]["Gender"].ToString() == "1")
         {
             rbtmale.Checked = true;

@@ -75,6 +75,7 @@
                     </td>
                     <td>
                         <asp:FileUpload ID="filepic" runat="server" />
+                        <asp:Image ID="Image1" runat="server" style="Height:100px;width:100px;"></asp:Image>
                         <asp:Label ID="lblFName" runat="server" Text=""></asp:Label>
                     </td>
                 </tr>
