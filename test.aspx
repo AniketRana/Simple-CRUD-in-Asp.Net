@@ -26,6 +26,7 @@
                     </td>
                     <td>
                         <asp:TextBox ID="txtid" Enabled="false" runat="server"></asp:TextBox>
+                        
                     </td>
                 </tr>
                 <tr>
@@ -33,7 +34,10 @@
                         Name
                     </td>
                     <td>
-                        <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtName" required runat="server"></asp:TextBox>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" 
+                            ControlToValidate="txtName" Display="Dynamic" ErrorMessage="* Please Enter Valid Name" ForeColor="red"
+                            ValidationExpression="[a-zA-Z ]*$" />
                     </td>
                 </tr>
                 <tr>
@@ -41,7 +45,11 @@
                         Email
                     </td>
                     <td>
-                        <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtEmail" required runat="server"></asp:TextBox>
+                         <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" 
+                             ControlToValidate="txtEmail"
+                             Display="Dynamic" ErrorMessage="* Invalid Email Address " 
+                             ForeColor="red" ValidationExpression="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" />
                     </td>
                 </tr>
                 <tr>
@@ -58,7 +66,11 @@
                         MobileNo
                     </td>
                     <td>
-                        <asp:TextBox ID="txtMob" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtMob" required runat="server"></asp:TextBox>
+                          <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="txtMob"
+                                                Display="Dynamic" ErrorMessage="* Please Enter Valid Mobile Number" ForeColor="red"
+                                                ValidationExpression="^(?:(?:\+|0{0,2})91(\s*[\ -]\s*)?|[0]?)?[789]\d{9}|(\d[ -]?){10}\d$" />
+
                     </td>
                 </tr>
                 <tr>
@@ -67,6 +79,7 @@
                     </td>
                     <td>
                         <asp:TextBox ID="txtEducation" runat="server"></asp:TextBox>
+
                     </td>
                 </tr>
                 <tr>
@@ -90,7 +103,7 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
+                        <asp:Button ID="btnSubmit" CausesValidation="true" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
                         <asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click" />
                     </td>
                 </tr>
