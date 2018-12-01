@@ -76,6 +76,7 @@ public partial class inline : System.Web.UI.Page
         TextBox Mno = grvdata.Rows[e.RowIndex].FindControl("GtxtMno") as TextBox;
         TextBox Education = grvdata.Rows[e.RowIndex].FindControl("GtxtEducation") as TextBox;
 
+        //update query
 
     }
 
@@ -93,7 +94,26 @@ public partial class inline : System.Web.UI.Page
 
     protected void grvdata_RowDataBound(object sender, GridViewRowEventArgs e)
     {
+        //For Radiobutton 
+        DataRowView drv = e.Row.DataItem as DataRowView;
         if (e.Row.RowType == DataControlRowType.DataRow)
+        {
+            if ((e.Row.RowState & DataControlRowState.Edit) > 0)
+            {
+                RadioButtonList rbtnl = (RadioButtonList)e.Row.FindControl("RadioButtonList1");
+                rbtnl.SelectedValue = drv[8].ToString();
+                if (drv[8].ToString() == "0")
+                {
+                    rbtnl.SelectedValue = "female";
+                }
+                else
+                {
+                    rbtnl.SelectedValue = "Male";
+                }
+            }
+        }
+         //For City
+         if (e.Row.RowType == DataControlRowType.DataRow)
         {
             if ((e.Row.RowState & DataControlRowState.Edit) > 0)
             {
@@ -116,30 +136,6 @@ public partial class inline : System.Web.UI.Page
                 ddList.SelectedValue = dr["City"].ToString();
             }
         }
-        //DataRowView drv = e.Row.DataItem as DataRowView;
-        //RadioButtonList rbtnl = (RadioButtonList)e.Row.FindControl("RadioButtonList1");
-        //rbtnl.SelectedValue = drv[8].ToString();
 
-        foreach (GridViewRow row in grvdata.Rows)
-        {
-            //Find the Radio button control
-            RadioButtonList rb = (RadioButtonList)row.FindControl("RadioButtonList1");
-
-            if (rb.SelectedItem.Text == "Male")
-            {
-
-                string id = row.Cells[2].Text;
-
-                string query = "Query";
-
-                SqlConnection con = new SqlConnection("Connection to DB");
-                SqlCommand cmd = new SqlCommand(query, con);
-
-                con.Open();
-                added = cmd.ExecuteNonQuery();
-
-                con.Close();
-            }
-        }
     }
 }
