@@ -95,7 +95,7 @@
                 <tr>
                     <td>
                         Gender
-                    </td>
+                    </td> 
                     <td>
                         <asp:RadioButton ID="rbtmale" Text="Male" Checked="true" GroupName="Gender" runat="server" />
                         <asp:RadioButton ID="rbtfemale" Text="Female" GroupName="Gender" runat="server" />
