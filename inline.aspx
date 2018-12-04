@@ -11,15 +11,16 @@
         <div>
 
             <div style="height: 500px; margin-top: 150px !important; width: 100%; overflow: scroll; margin-top: 20px;">
-                <asp:GridView ID="grvdata" runat="server" AutoGenerateColumns="False" class="display"
+
+                <asp:GridView ID="grvdata" runat="server" AutoGenerateColumns="False" ShowHeader="true" ShowFooter="true" 
                     Width="100%" OnRowCancelingEdit="grvdata_RowCancelingEdit" OnRowEditing="grvdata_RowEditing"
-                    OnRowUpdating="grvdata_RowUpdating" OnRowDataBound="grvdata_RowDataBound">
+                    OnRowUpdating="grvdata_RowUpdating" OnRowDataBound="grvdata_RowDataBound" OnRowCommand="grvdata_RowCommand" >
                     <Columns>
                         
                         <asp:TemplateField HeaderText="ID">    
-                            <HeaderTemplate>
-                                <asp:TextBox ID="ntxtID" Enabled="false" runat="server"></asp:TextBox>
-                            </HeaderTemplate>
+                            <FooterTemplate>
+                                <asp:TextBox style="float:left;" ID="ntxtID" Enabled="false" Width="30px" runat="server"></asp:TextBox>
+                            </FooterTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="lblId" runat="server" Text='<%# Eval("ID") %>'></asp:Label>
                             </ItemTemplate>
@@ -29,9 +30,9 @@
                         </asp:TemplateField>
 
                         <asp:TemplateField HeaderText="Name">
-                            <HeaderTemplate>
-                                <asp:TextBox ID="ntxtName" runat="server"></asp:TextBox>
-                            </HeaderTemplate>
+                            <FooterTemplate>
+                                <asp:TextBox style="float:left;" ID="ntxtName" Width="70px" runat="server"></asp:TextBox>
+                            </FooterTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="lblName" runat="server" Text='<%# Eval("Name") %>'></asp:Label>
                             </ItemTemplate>
@@ -41,9 +42,9 @@
                         </asp:TemplateField>
 
                         <asp:TemplateField HeaderText="Email">
-                            <HeaderTemplate>
-                                <asp:TextBox ID="ntxtEmail" runat="server"></asp:TextBox> 
-                            </HeaderTemplate>
+                            <FooterTemplate>
+                                <asp:TextBox ID="ntxtEmail" style="float:left;" Width="120px" runat="server"></asp:TextBox> 
+                            </FooterTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="lblEmail" runat="server" Text='<%# Eval("Email") %>'></asp:Label>
                             </ItemTemplate>
@@ -53,9 +54,10 @@
                         </asp:TemplateField>
 
                         <asp:TemplateField HeaderText="City">
-                            <HeaderTemplate>
-                                <asp:TextBox ID="ntxtCity" runat="server"></asp:TextBox>
-                            </HeaderTemplate>
+                            <FooterTemplate>
+                                <asp:DropDownList ID="NddlCity" style="float:left;" runat="server" Width="100px" AppendDataBoundItems="true" >
+                                </asp:DropDownList>
+                            </FooterTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="lblCity" runat="server" Text='<%# Eval("City") %>'></asp:Label>
                             </ItemTemplate>
@@ -65,9 +67,9 @@
                         </asp:TemplateField>
 
                         <asp:TemplateField HeaderText="MobileNo">
-                            <HeaderTemplate>
-                                <asp:TextBox ID="ntxtMno" runat="server"></asp:TextBox>
-                            </HeaderTemplate>
+                            <FooterTemplate>
+                                <asp:TextBox ID="ntxtMno" style="float:left;" Width="70px" runat="server"></asp:TextBox>
+                            </FooterTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="lblMobileNo" runat="server" Text='<%# Eval("MobileNo") %>'></asp:Label>
                             </ItemTemplate>
@@ -77,9 +79,9 @@
                         </asp:TemplateField>
 
                         <asp:TemplateField HeaderText="Education">
-                            <HeaderTemplate>
-                                    <asp:TextBox ID="ntxtEducation" runat="server"></asp:TextBox>
-                            </HeaderTemplate>
+                            <FooterTemplate>
+                                    <asp:TextBox ID="ntxtEducation" style="float:left;" Width="70px" runat="server"></asp:TextBox>
+                            </FooterTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="lblEducation" runat="server" Text='<%# Eval("Education") %>'></asp:Label>
                             </ItemTemplate>
@@ -89,55 +91,55 @@
                         </asp:TemplateField>
 
                         <asp:TemplateField HeaderText="Img">
-                            <HeaderTemplate>
-                                <asp:FileUpload ID="nfileupd" runat="server" />
-                            </HeaderTemplate>
+                            <FooterTemplate>
+                                <asp:FileUpload ID="nfileupd" runat="server" style="float:left;" Width="150px" />
+                            </FooterTemplate>
                             <ItemTemplate>
                                 <asp:Image ID="imgPic" Height="25px" Width="30px" Style="border-radius: 50%;" ImageUrl='<%# "img/"+ Eval ("Photo") %>'
                                     runat="server" />
                             </ItemTemplate>
                             <EditItemTemplate>
+                                <asp:Label ID="lblimg" runat="server" Text='<%# Eval("Photo") %>'></asp:Label>
                                 <asp:FileUpload ID="Gfileupd" runat="server" />
                                 <asp:Image ID="GimgPic" Height="25px" Width="30px" Style="border-radius: 50%;" ImageUrl='<%# "img/"+ Eval ("Photo") %>'
                                     runat="server" />
                             </EditItemTemplate>
-                        <//asp:TemplateField>
+                        </asp:TemplateField>
 
                         <asp:TemplateField HeaderText="Gender">
-                            <HeaderTemplate>
-                                <asp:RadioButton ID="nrbtMale" Checked="true" GroupName="Ngender" runat="server" />
-                                <asp:RadioButton ID="nrbtfemale" GroupName="Ngender" runat="server" />
-                            </HeaderTemplate>
+                            <FooterTemplate>
+                                <%--<asp:RadioButton style="font-weight: initial;" ID="nrbtMale" Checked="true" Text="Male" GroupName="Ngender" runat="server" />
+                                <asp:RadioButton style="font-weight: initial;" ID="nrbtfemale" Text="Female" GroupName="Ngender" runat="server" />--%>
+                                 <asp:RadioButtonList ID="rbtGender" style="font-weight: initial;" runat="server">
+                                    <asp:ListItem Selected="True">Male</asp:ListItem>
+                                    <asp:ListItem>female</asp:ListItem>
+                                </asp:RadioButtonList>
+                            </FooterTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="lblGender" runat="server" Text='<%# Eval("Gender").ToString() == "1" ? "Male" : "Female" %>'></asp:Label>
                             </ItemTemplate>
                             <EditItemTemplate>
                                 <asp:RadioButtonList ID="RadioButtonList1" runat="server">
                                     <asp:ListItem>Male</asp:ListItem>
-                                    <asp:ListItem>female</asp:ListItem>
+                                    <asp:ListItem>Female</asp:ListItem>
                                 </asp:RadioButtonList>
                             </EditItemTemplate>
                         </asp:TemplateField>
 
-                        <asp:TemplateField>
-                            <HeaderTemplate>
-                                Edit
-                            </HeaderTemplate>
+                        <asp:TemplateField HeaderText="Action">
+                            <FooterTemplate>
+                                    <asp:Button ID="btnAdd" CommandName="AddNew" runat="server" Text="Add New" />
+                            </FooterTemplate>
                             <ItemTemplate>
-                                <asp:Button ID="btnupd" runat="server" CommandName="Edit" Text="Edit Record" />
+                                <asp:Button ID="btnupd" runat="server" CommandName="Edit" Text="Edit" />
+                                <asp:Button ID="btnDelete" CommandArgument='<%# Eval("ID") %>' OnCommand="btnDelete_Command" runat="server" Text="Delete"  />
                             </ItemTemplate>
                             <EditItemTemplate>
+                                
                                 <asp:Button ID="btn_Update" runat="server" Text="Update" CommandName="Update" />
                                 <asp:Button ID="btn_Cancel" runat="server" Text="Cancel" CommandName="Cancel" />
+                                
                             </EditItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField>
-                            <HeaderTemplate>
-                                Delete
-                            </HeaderTemplate>
-                            <ItemTemplate>
-                                <asp:Button ID="btnDelete" runat="server" Text="Delete" />
-                            </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
                 </asp:GridView>
