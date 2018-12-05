@@ -23,7 +23,7 @@
                             </FooterTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="lblId" runat="server" Text='<%# Eval("ID") %>'></asp:Label>
-                            </ItemTemplate>
+                            </ItemTemplate> 
                             <EditItemTemplate >
                                 <asp:TextBox ID="GtxtId" Enabled="false" Width="30px" Text='<%#Eval("ID") %>' runat="server"></asp:TextBox>
                             </EditItemTemplate>
