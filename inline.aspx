@@ -30,7 +30,7 @@
                         </asp:TemplateField>
 
                         <asp:TemplateField HeaderText="Name">
-                            <FooterTemplate>
+                            <FooterTemplate> 
                                 <asp:TextBox style="float:left;" ID="ntxtName" Width="70px" runat="server"></asp:TextBox>
                             </FooterTemplate>
                             <ItemTemplate>
