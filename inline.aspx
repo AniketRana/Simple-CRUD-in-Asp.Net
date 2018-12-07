@@ -35,7 +35,7 @@
                             </FooterTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="lblName" runat="server" Text='<%# Eval("Name") %>'></asp:Label>
-                            </ItemTemplate>
+                            </ItemTemplate> 
                             <EditItemTemplate>
                                 <asp:TextBox ID="GtxtName" Width="50px" Text='<%#Eval("Name") %>' runat="server"></asp:TextBox>
                             </EditItemTemplate>
