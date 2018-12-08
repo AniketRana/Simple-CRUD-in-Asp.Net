@@ -27,7 +27,7 @@
                             <EditItemTemplate >
                                 <asp:TextBox ID="GtxtId" Enabled="false" Width="30px" Text='<%#Eval("ID") %>' runat="server"></asp:TextBox>
                             </EditItemTemplate>
-                        </asp:TemplateField>
+                        </asp:TemplateField> 
 
                         <asp:TemplateField HeaderText="Name">
                             <FooterTemplate> 
