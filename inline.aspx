@@ -91,7 +91,7 @@
                         </asp:TemplateField>
 
                         <asp:TemplateField HeaderText="Img">
-                            <FooterTemplate>
+                            <FooterTemplate>  
                                 <asp:FileUpload ID="nfileupd" runat="server" style="float:left;" Width="150px" />
                             </FooterTemplate>
                             <ItemTemplate>
