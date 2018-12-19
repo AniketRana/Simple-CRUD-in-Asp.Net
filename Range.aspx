@@ -20,7 +20,6 @@
 
     <body>
 
-
         <br>
         <asp:TextBox ID="txtFrom" pattern="^\d*(\.\d{0,2})?$" runat="server" Placeholder="From"></asp:TextBox>
         <asp:TextBox ID="txtTo" pattern="^\d*(\.\d{0,2})?$" runat="server" Placeholder="To"></asp:TextBox>
