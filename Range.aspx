@@ -12,7 +12,7 @@
         <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js'></script>
         <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/themes/start/jquery-ui.css" />
          
-        <link href="JqueryTags/src/jquery.tagsinput.css" rel="stylesheet" />
+        <link href="JqueryTags/src/jquery.tagsinput.css" rel="stylesheet" /> 
         <script src="JqueryTags/src/jquery.tagsinput.js"></script>
             
 
