@@ -16,7 +16,7 @@
         <script src="JqueryTags/src/jquery.tagsinput.js"></script>
             
 
-    </head>
+    </head>  
          
     <body>
           
