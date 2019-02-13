@@ -15,7 +15,7 @@
         <link href="JqueryTags/src/jquery.tagsinput.css" rel="stylesheet" /> 
         <script src="JqueryTags/src/jquery.tagsinput.js"></script> 
             
-    </head>  
+    </head>    
            
     <body>     
         <br>  
@@ -30,13 +30,11 @@
         <br>
         <script>
             script type = "text/javascript" >
-
-
+                
                 function onRemoveTag(tag) {
                     alert("Removed a tag: " + tag);
-                }
-
-
+                }    
+            
             $(function () {
 
                 $('#txtResult').tagsInput({ width: 'auto' });
